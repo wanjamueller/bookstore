@@ -13,7 +13,17 @@ function renderMovies() {
 
 //likes function
 
-function addLikes() {}
+function addLikes(index) {
+    if ((movies[index].liked = false)) {
+        movies[index].likes + 1;
+        movies.liked = true;
+    } else {
+        movies[index].likes - 1;
+        movies[index].liked = false;
+    }
+
+    renderMovies();
+}
 
 // comments function
 
