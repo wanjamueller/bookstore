@@ -1,28 +1,40 @@
-function booksTemplate(index) {
+function moviesTemplate(index) {
     return /*html*/ `
         <article>
-            <h2>${books[index].name}</h2>
+            <div class="title">
+                <h2>${movies[index].name}</h2>
+            </div>
             <figure>
-                <img src="../assets/img/book_cover.jpg" alt="Picture of Book Cover">
+                <img src="${movies[index].cover}" alt="Movieposter of ${movies[index].name}">
             </figure>
+                 <div class="likes">
+                    <p>${movies[index].likes}</p>
+                    <input onclick="addLikes ()" class="like" type="image" src="../assets/icons/like.svg" alt="click to like movie">
+                </div>
             <table>
                 <tr>
                     <th>Genre:</th>
-                    <td>${books[index].genre}</td>
+                    <td>${movies[index].genre}</td>
                 </tr>
                  <tr>
                     <th>Published:</th>
-                    <td>${books[index].publishedYear}</td>
+                    <td>${movies[index].publishedYear}</td>
                 </tr>
                 <tr>
-                    <th>Author:</th>
-                    <td>${books[index].author}</td>
+                    <th>Director:</th>
+                    <td>${movies[index].director}</td>
                 </tr>
                 <tr>
-                    <th>Price:</th>
-                    <td>${books[index].price} EUR</td>
+                    <th>Main Actor:</th>
+                    <td>${movies[index].mainActor}</td>
                 </tr>
             </table>
+            <section class=interaction>
+                <div class="comments">
+                    <input type="text" name="comment" id="comment">
+                    <img src="../assets/icons/send.svg" alt="click to submit comment">
+                </div>
+            </section>
         </article>
     `;
 }

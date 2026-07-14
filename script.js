@@ -2,16 +2,18 @@
 
 const storeRef = document.getElementById("container");
 
-function renderBooks() {
-    for (let index = 0; index < books.length; index++) {
-        const library = books[index];
-        storeRef.innerHTML += booksTemplate(index);
+function renderMovies() {
+    for (let index = 0; index < movies.length; index++) {
+        const library = movies[index];
+        storeRef.innerHTML += moviesTemplate(index);
     }
 }
 
 // render books (all, favorites)
 
 //likes function
+
+function addLikes() {}
 
 // comments function
 
@@ -20,5 +22,5 @@ function renderBooks() {
 // Initializing
 
 function init() {
-    renderBooks();
+    renderMovies();
 }
