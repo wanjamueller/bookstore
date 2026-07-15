@@ -1,6 +1,7 @@
 // link HTML
 
 const storeRef = document.getElementById("container");
+const commentsRef = document.getElementById("saved-comment");
 
 function renderMovies() {
     for (let index = 0; index < movies.length; index++) {

@@ -1,9 +1,9 @@
 function moviesTemplate(index) {
     return /*html*/ `
         <article>
-            <div class="title">
+            <header class="title">        
                 <h2>${movies[index].name}</h2>
-            </div>
+            </header>
             <figure>
                 <img src="${movies[index].cover}" alt="Movieposter of ${movies[index].name}">
             </figure>
@@ -34,6 +34,7 @@ function moviesTemplate(index) {
                     <input type="text" name="comment" id="comment">
                     <img src="../assets/icons/send.svg" alt="click to submit comment">
                 </div>
+                <div id="saved-comment"></div>
             </section>
         </article>
     `;
