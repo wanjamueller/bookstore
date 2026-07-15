@@ -1,41 +1,55 @@
-function moviesTemplate(index) {
+function moviesTemplate(i) {
     return /*html*/ `
         <article>
             <header class="title">        
-                <h2>${movies[index].name}</h2>
+                <h2>${movies[i].name}</h2>
             </header>
-            <figure>
-                <img src="${movies[index].cover}" alt="Movieposter of ${movies[index].name}">
-            </figure>
-                 <div class="likes">
-                    <p>${movies[index].likes}</p>
-                    <input onclick="addLikes ()" class="like" type="image" src="../assets/icons/like.svg" alt="click to like movie">
-                </div>
+                    <figure>
+                        <img src="${movies[i].cover}" alt="Movieposter of ${movies[i].name}">
+                    </figure>
+                                       <div class="likes">
+                        <p id="likes-${i}">${movies[i].likes}</p>
+                        <input id="like-button-${i}" onclick="addLikes ()" class="like" type="image" src="../assets/icons/like.svg" alt="click to like movie">
+                    </div>
             <table>
                 <tr>
                     <th>Genre:</th>
-                    <td>${movies[index].genre}</td>
+                    <td>${movies[i].genre}</td>
                 </tr>
                  <tr>
                     <th>Published:</th>
-                    <td>${movies[index].publishedYear}</td>
+                    <td>${movies[i].publishedYear}</td>
                 </tr>
                 <tr>
                     <th>Director:</th>
-                    <td>${movies[index].director}</td>
+                    <td>${movies[i].director}</td>
                 </tr>
                 <tr>
                     <th>Main Actor:</th>
-                    <td>${movies[index].mainActor}</td>
+                    <td>${movies[i].mainActor}</td>
                 </tr>
             </table>
             <section class=interaction>
                 <div class="comments">
-                    <input type="text" name="comment" id="comment">
-                    <img src="../assets/icons/send.svg" alt="click to submit comment">
+                    <input id="input-${i}" type="text">
+                    <img  id="submit-${i}" onclick="saveComments()" src="../assets/icons/send.svg" alt="click to submit comment">
                 </div>
-                <div id="saved-comment"></div>
+                <div id="movie-comments-${i}">
+                            <h3>Comments</h3>
+                    <table id="comments-table-${i}">
+                        ${commentsTemplate(movies[i].comments)}
+                    </table>
+                </div>
             </section>
         </article>
+    `;
+}
+
+function commentRowTemplate(comment) {
+    return /*html*/ `
+        <tr>
+            <th>${comment.name}:</th>
+            <td>${comment.comment}</td>
+        </tr>
     `;
 }

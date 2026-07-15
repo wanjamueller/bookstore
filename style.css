@@ -63,44 +63,44 @@ body > header {
                 width: 20px;
             }
         }
+    }
 
-        tbody {
-            display: flex;
-            flex-direction: column;
+    tbody {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        gap: 5px;
+        font-size: 1rem;
+
+        th {
+            width: 100px;
             text-align: start;
-            gap: 5px;
-            font-size: 1rem;
+        }
 
-            th {
-                width: 100px;
-                text-align: start;
-            }
+        tr {
+            display: flex;
+            text-align: start;
+        }
+    }
 
-            tr {
-                display: flex;
-                text-align: start;
+    .interaction {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .comments {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            input {
+                width: 300px;
             }
         }
 
-        .interaction {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            .comments {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-
-                input {
-                    width: 300px;
-                }
-            }
-
-            img {
-                height: 20px;
-                width: 20px;
-            }
+        img {
+            height: 20px;
+            width: 20px;
         }
     }
 }

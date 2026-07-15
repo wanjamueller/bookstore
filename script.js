@@ -1,30 +1,26 @@
 // link HTML
 
 const storeRef = document.getElementById("container");
-const commentsRef = document.getElementById("saved-comment");
 
 function renderMovies() {
-    for (let index = 0; index < movies.length; index++) {
-        const library = movies[index];
-        storeRef.innerHTML += moviesTemplate(index);
+    for (let i = 0; i < movies.length; i++) {
+        storeRef.innerHTML += moviesTemplate(i);
     }
 }
+
+function commentsTemplate(comments) {
+    let rows = "";
+    for (let j = 0; j < comments.length; j++) {
+        rows += commentRowTemplate(comments[j]);
+    }
+    return rows;
+}
+
+// Save to local storage
 
 // render books (all, favorites)
 
 //likes function
-
-function addLikes(index) {
-    if ((movies[index].liked = false)) {
-        movies[index].likes + 1;
-        movies.liked = true;
-    } else {
-        movies[index].likes - 1;
-        movies[index].liked = false;
-    }
-
-    renderMovies();
-}
 
 // comments function
 
