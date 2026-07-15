@@ -3,7 +3,7 @@ body {
     width: 100%;
 }
 
-header {
+body > header {
     height: 60px;
     width: 100%;
     padding: 20px;
@@ -21,22 +21,25 @@ header {
 
     article {
         width: 300px;
-        height: 450px;
+        height: 500px;
         border: 2px solid black;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 25px 15px;
+        padding: 15px 15px;
         gap: 10px;
 
         .title {
-            height: 50px;
-        }
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        h2 {
-            font-size: 20px;
-            text-align: center;
+            h2 {
+                font-size: 20px;
+                text-align: center;
+            }
         }
 
         figure {
@@ -60,44 +63,44 @@ header {
                 width: 20px;
             }
         }
+    }
 
-        tbody {
-            display: flex;
-            flex-direction: column;
+    tbody {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        gap: 5px;
+        font-size: 1rem;
+
+        th {
+            width: 100px;
             text-align: start;
-            gap: 5px;
-            font-size: 1rem;
+        }
 
-            th {
-                width: 100px;
-                text-align: start;
-            }
+        tr {
+            display: flex;
+            text-align: start;
+        }
+    }
 
-            tr {
-                display: flex;
-                text-align: start;
+    .interaction {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .comments {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            input {
+                width: 300px;
             }
         }
 
-        .interaction {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            .comments {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-
-                input {
-                    width: 300px;
-                }
-            }
-
-            img {
-                height: 20px;
-                width: 20px;
-            }
+        img {
+            height: 20px;
+            width: 20px;
         }
     }
 }
