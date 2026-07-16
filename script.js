@@ -2,6 +2,8 @@
 
 const storeRef = document.getElementById("container");
 
+// render movies and comments
+
 function renderMovies() {
     for (let i = 0; i < movies.length; i++) {
         storeRef.innerHTML += moviesTemplate(i);
@@ -18,7 +20,11 @@ function commentsTemplate(comments) {
 
 // Save to local storage
 
-// render books (all, favorites)
+function saveMovies() {
+    localStorage.setItem("movies", JSON.stringify(movies));
+}
+
+// all / favorites
 
 //likes function
 
@@ -30,4 +36,5 @@ function commentsTemplate(comments) {
 
 function init() {
     renderMovies();
+    saveMovies();
 }
