@@ -1,4 +1,4 @@
-let movies = [
+let defaultMovies = [
     {
         "name": "The Godfather",
         "director": "Francis Ford Coppola",
