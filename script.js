@@ -1,3 +1,5 @@
+let movies;
+
 // link HTML
 
 const storeRef = document.getElementById("container");
@@ -18,7 +20,11 @@ function commentsTemplate(comments) {
     return rows;
 }
 
-// Save to local storage
+// local storage
+
+function getMovies() {
+    movies = JSON.parse(localStorage.getItem("movies")) || defaultMovies;
+}
 
 function saveMovies() {
     localStorage.setItem("movies", JSON.stringify(movies));
@@ -54,6 +60,6 @@ function saveComments(i) {
 // Initializing
 
 function init() {
+    getMovies();
     renderMovies();
-    saveMovies();
 }
