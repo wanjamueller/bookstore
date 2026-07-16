@@ -11,7 +11,7 @@ function moviesTemplate(i) {
                         <p id="likes-${i}">${movies[i].likes}</p>
                         <input id="like-button-${i}" onclick="addLikes ()" class="like" type="image" src="../assets/icons/like.svg" alt="click to like movie">
                     </div>
-            <table>
+            <table class="movie-table">
                 <tr>
                     <th>Genre:</th>
                     <td>${movies[i].genre}</td>
@@ -30,15 +30,19 @@ function moviesTemplate(i) {
                 </tr>
             </table>
             <section class=interaction>
-                <div class="comments">
-                    <input id="input-${i}" type="text">
-                    <img  id="submit-${i}" onclick="saveComments()" src="../assets/icons/send.svg" alt="click to submit comment">
-                </div>
-                <div id="movie-comments-${i}">
-                            <h3>Comments</h3>
-                    <table id="comments-table-${i}">
-                        ${commentsTemplate(movies[i].comments)}
-                    </table>
+
+                <div class="movie-comments" id="movie-comments-${i}">
+                    <h3>Comments</h3>
+                    <div class="div-table">
+                        <table class="comments-table" id="comments-table-${i}">
+                            ${commentsTemplate(movies[i].comments)}
+                        </table>
+                    </div>
+                    <h4>add comments</h4>
+                    <div class="comments">
+                        <input id="input-${i}" type="text">
+                        <img  id="submit-${i}" onclick="saveComments()" src="../assets/icons/send.svg" alt="click to submit comment">
+                    </div>
                 </div>
             </section>
         </article>
