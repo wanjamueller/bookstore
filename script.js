@@ -24,6 +24,25 @@ function saveMovies() {
     localStorage.setItem("movies", JSON.stringify(movies));
 }
 
+// add comments
+
+function saveComments(i) {
+    const input = document.getElementById(`input-${i}`);
+    const comment = input.value;
+    if (!comment) return;
+
+    movies[i].comments.push({
+        name: "You",
+        comment: comment,
+    });
+
+    saveMovies();
+
+    document.getElementById(`comments-table-${i}`).innerHTML = commentsTemplate(movies[i].comments);
+
+    input.value = "";
+}
+
 // all / favorites
 
 //likes function
