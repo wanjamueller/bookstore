@@ -111,7 +111,6 @@ body {
             .comments {
                 display: flex;
                 align-items: flex-end;
-                gap: 8px;
 
                 .input-label {
                     display: flex;

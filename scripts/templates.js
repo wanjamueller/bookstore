@@ -44,7 +44,7 @@ function moviesTemplate(i) {
                             <input id="input-${i}" type="text" name="add comments">
                         </form>
                         <button id="submit-${i}" class="comment-btn" onclick="saveComments(${i})" onkeypress="saveComments(${i})">
-                            <img src="../assets/icons/send.svg" alt="click to submit comment">
+                            <img src="./assets/icons/send.svg" alt="click to submit comment">
                         </button>
                     </div>
                 </div>
