@@ -2,15 +2,14 @@ function moviesTemplate(i) {
     return /*html*/ `
         <article>
             <header class="title">        
-                <h2>${movies[i].name}</h2>
+                <h2 tabindex="0">${movies[i].name}</h2>
             </header>
                     <figure>
-                        <img src="${movies[i].cover}" alt="Movieposter of ${movies[i].name}">
+                        <img tabindex="0" src="${movies[i].cover}" alt="Movieposter of ${movies[i].name}">
                     </figure>
                     <div class="likes">
                         <p id="likes-${i}">${movies[i].likes}</p>
-                        <button id="like-button-${i}" class="like">
-                            <img src="../assets/icons/like.svg" alt="click to like movie">
+                        <button id="like-button-${i}" onclick="toggleLikes(${i})" class="like-button-unliked" aria-label="${movies[i].liked ? "Unlike this movie" : "Like this movie"}">
                         </button>
                     </div>
             <table class="movie-table">
@@ -18,7 +17,7 @@ function moviesTemplate(i) {
                     <th>Genre:</th>
                     <td>${movies[i].genre}</td>
                 </tr>
-                 <tr>
+                <tr>
                     <th>Published:</th>
                     <td>${movies[i].publishedYear}</td>
                 </tr>
@@ -32,18 +31,19 @@ function moviesTemplate(i) {
                 </tr>
             </table>
             <section class=interaction>
-
                 <div class="movie-comments" id="movie-comments-${i}">
                     <h3>Comments</h3>
                     <div class="div-table">
                         <table class="comments-table" id="comments-table-${i}">
-                            ${commentsTemplate(movies[i].comments)}
+                            ${commentsRows(movies[i].comments)}
                         </table>
                     </div>
-                    <h4>add comments</h4>
                     <div class="comments">
-                        <input id="input-${i}" type="text">
-                        <button id="submit-${i}" class="like-btn" onclick="saveComments(${i})" onkeypress="saveComments(${i})">
+                        <form class="input-label">
+                            <label for="input-${i}">add comments</label>
+                            <input id="input-${i}" type="text" name="add comments">
+                        </form>
+                        <button id="submit-${i}" class="comment-btn" onclick="saveComments(${i})" onkeypress="saveComments(${i})">
                             <img src="../assets/icons/send.svg" alt="click to submit comment">
                         </button>
                     </div>

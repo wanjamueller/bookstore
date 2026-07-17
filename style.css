@@ -1,13 +1,17 @@
 body {
     background-color: #f0ede3;
     width: 100%;
-}
 
-body > header {
-    height: 60px;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid black;
+    .main-header {
+        height: 60px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-top: 20px;
+
+        h1 {
+            padding: 0px 20px;
+        }
+    }
 }
 
 #container {
@@ -58,90 +62,112 @@ body > header {
             gap: 8px;
             justify-content: flex-end;
 
-            .like {
+            .like-button-unliked {
                 border: none;
+                height: 20px;
+                width: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-image: url(./assets/icons/like.svg);
+            }
+
+            .like-button-liked {
+                border: none;
+                height: 20px;
+                width: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-image: url(./assets/icons/liked.svg);
+            }
+        }
+
+        .movie-table {
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            gap: 8px;
+            font-size: 1rem;
+
+            th {
+                min-width: 100px;
+                text-align: start;
+            }
+
+            tr {
+                display: flex;
+                text-align: start;
+            }
+        }
+
+        .interaction {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid black;
+            padding-top: 10px;
+
+            .comments {
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
+
+                .input-label {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 8px;
+
+                    label {
+                        font-weight: bold;
+                    }
+
+                    input {
+                        width: 95%;
+                    }
+                }
+
+                .comment-btn {
+                    border: none;
+                }
 
                 img {
                     height: 20px;
                     width: 20px;
                 }
             }
-        }
-    }
 
-    .movie-table {
-        display: flex;
-        flex-direction: column;
-        text-align: start;
-        gap: 5px;
-        font-size: 1rem;
+            .movie-comments {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
 
-        th {
-            width: 100px;
-            text-align: start;
-        }
-
-        tr {
-            display: flex;
-            text-align: start;
-        }
-    }
-
-    .interaction {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        border-top: 1px solid black;
-        padding-top: 10px;
-
-        .comments {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            input {
-                width: 300px;
+                .div-table {
+                    height: 125px;
+                    overflow-y: auto;
+                }
             }
 
-            .like-btn {
-                border: none;
-            }
+            .comments-table {
+                min-width: 100px;
+                table-layout: fixed;
+                border-collapse: collapse;
+                text-align: left;
 
-            img {
-                height: 20px;
-                width: 20px;
-            }
-        }
+                th {
+                    width: 30%;
+                }
 
-        .movie-comments {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+                td {
+                    width: 70%;
+                }
 
-            .div-table {
-                height: 125px;
-                overflow-y: auto;
-            }
-        }
-
-        .comments-table {
-            width: 100%;
-            table-layout: fixed;
-            border-collapse: collapse;
-            text-align: left;
-
-            th {
-                width: 30%;
-            }
-
-            td {
-                width: 70%;
-            }
-
-            th,
-            td {
-                padding: 4px 8px;
-                vertical-align: top;
+                th,
+                td {
+                    padding: 4px 8px;
+                    vertical-align: top;
+                }
             }
         }
     }
@@ -159,9 +185,29 @@ footer {
     color: #f0ede3;
 }
 
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-header {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /* #region contentlimits */
 
 @media screen and (min-width: 1441px) {
+    .main-header {
+        padding: 20px max(calc(50% - 720px));
+
+        h1 {
+            padding: 20px;
+        }
+    }
     #container {
         padding: 80px max(calc(50% - 720px));
     }
