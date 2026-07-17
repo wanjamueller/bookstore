@@ -61,6 +61,7 @@ body {
             display: flex;
             gap: 8px;
             justify-content: flex-end;
+            font-weight: bold;
 
             .like-button-unliked {
                 border: none;
